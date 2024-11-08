@@ -25,11 +25,11 @@ def find_top_3_colleges(jee_rank, filename):
     except FileNotFoundError:
         return None
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
     return "Welcome to the College Selector API!"
 
-@app.route('/', methods=['POST'])
+@app.route('/api/colleges', methods=['POST'])
 def api_colleges():
     try:
         data = request.get_json()
